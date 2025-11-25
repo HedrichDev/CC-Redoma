@@ -19,9 +19,13 @@
 > 
 > 👥 Anayle Figueroa
 > 
-> 👥 
+> 👥 Angel Rodriguez Bowen
 > 
-> 👥 
+> 👥 Daniel Rodriguez
+> 
+> 👥 David Nieto
+> 
+> 👥Sophia Alfonzo
 
 
 ## 📋 Tabla de Contenidos
