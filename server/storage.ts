@@ -1,4 +1,5 @@
 import { randomUUID } from 'crypto';
+import bcryptjs from 'bcryptjs';
 import type { 
   User, InsertUser, 
   Local, InsertLocal,
@@ -55,10 +56,14 @@ export class MemStorage implements IStorage {
   }
 
   private seedData() {
+    // TEST CREDENTIALS: All users use password 'password'
+    const testPassword = 'password';
+    const hashedPassword = bcryptjs.hashSync(testPassword, 10);
+
     const adminUser: User = {
       id: randomUUID(),
       username: 'admin',
-      password: '$2a$10$rZ3qPpKzNPxYNqQJZwKQ5.7M9yP0mYF7DwOKhXZY8lQwKwEJYvBbC',
+      password: hashedPassword,
       email: 'admin@ccredoma.com',
       fullName: 'Administrador CCredoma',
       phone: '+1 234 567 8900',
@@ -69,7 +74,7 @@ export class MemStorage implements IStorage {
     const tenantUser: User = {
       id: randomUUID(),
       username: 'inquilino1',
-      password: '$2a$10$rZ3qPpKzNPxYNqQJZwKQ5.7M9yP0mYF7DwOKhXZY8lQwKwEJYvBbC',
+      password: hashedPassword,
       email: 'inquilino@example.com',
       fullName: 'María González',
       phone: '+1 234 567 8901',
@@ -77,8 +82,20 @@ export class MemStorage implements IStorage {
       createdAt: new Date(),
     };
 
+    const externalUser: User = {
+      id: randomUUID(),
+      username: 'visitante',
+      password: hashedPassword,
+      email: 'visitante@example.com',
+      fullName: 'Visitante Externo',
+      phone: '+1 234 567 8902',
+      role: 'VisitanteExterno',
+      createdAt: new Date(),
+    };
+
     this.users.set(adminUser.id, adminUser);
     this.users.set(tenantUser.id, tenantUser);
+    this.users.set(externalUser.id, externalUser);
 
     const sampleLocals: Local[] = [
       {

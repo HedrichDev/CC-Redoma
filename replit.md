@@ -154,3 +154,24 @@ Generated commercial space images stored in `attached_assets/generated_images/`:
 - Office commercial space
 - Services commercial space
 - Entertainment commercial space
+
+## Test Credentials
+
+All test users use the password: **`password`**
+
+### Admin User (CentroComercialAdmin)
+- Username: `admin`
+- Email: admin@ccredoma.com
+- Access: Full administrative dashboard with metrics, local management, contracts, payments, and requests
+
+### Tenant User (LocalOwner)
+- Username: `inquilino1`
+- Email: inquilino@example.com
+- Access: Tenant portal with active contract (Local B-205), payment history, and contract details
+
+### External Visitor (VisitanteExterno)
+- Username: `visitante`
+- Email: visitante@example.com
+- Access: Public catalog browsing and contact request submission
+
+See `TEST_CREDENTIALS.md` for complete verification guide and test scenarios.
