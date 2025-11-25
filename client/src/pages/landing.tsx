@@ -4,7 +4,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Building2, Store, FileText, MessageSquare, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { useAuth } from '@/lib/auth';
-import heroImage from '@assets/redoma.jpg';
 
 export default function Landing() {
   const { user } = useAuth();
@@ -42,7 +41,7 @@ export default function Landing() {
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          style={{ backgroundImage: `url(/redoma.jpg)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
         
