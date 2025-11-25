@@ -64,9 +64,9 @@ export default function Login() {
       </div>
       
       <div className="w-full max-w-md">
-        <div className="flex items-center justify-center gap-2 mb-8">
-          <img src="/favicon.png" alt="CCredoma" className="h-10 w-10" />
-          <span className="text-3xl font-bold">CCredoma</span>
+        <div className="flex flex-col items-center justify-center mb-8">
+          <img src="/favicon.png" alt="CCredoma" className="h-24 w-24 mb-4" />
+          <span className="text-4xl font-bold">CCredoma</span>
         </div>
 
         <Card>
