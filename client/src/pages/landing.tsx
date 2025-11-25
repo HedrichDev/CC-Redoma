@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Building2, Store, FileText, MessageSquare, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { useAuth } from '@/lib/auth';
-import heroImage from '@assets/generated_images/modern_shopping_center_hero.png';
+import heroImage from '@assets/redoma.jpg';
 
 export default function Landing() {
   const { user } = useAuth();
