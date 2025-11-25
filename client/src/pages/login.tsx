@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
-import { Building2, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function Login() {
@@ -65,7 +65,7 @@ export default function Login() {
       
       <div className="w-full max-w-md">
         <div className="flex items-center justify-center gap-2 mb-8">
-          <Building2 className="h-10 w-10 text-primary" />
+          <img src="/favicon.png" alt="CCredoma" className="h-10 w-10" />
           <span className="text-3xl font-bold">CCredoma</span>
         </div>
 

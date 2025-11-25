@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Building2, Search, MapPin, Square, DollarSign, Loader2 } from 'lucide-react';
+import { Search, MapPin, Square, DollarSign, Loader2 } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { useAuth } from '@/lib/auth';
 import type { Local, LocalType, LocalStatus } from '@shared/schema';
@@ -54,7 +54,7 @@ export default function Catalog() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <Building2 className="h-6 w-6 text-primary" />
+            <img src="/favicon.png" alt="CCredoma" className="h-6 w-6" />
             <span className="text-xl font-semibold">CCredoma</span>
           </Link>
           <div className="flex items-center gap-4">

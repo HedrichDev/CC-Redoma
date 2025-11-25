@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Loader2, FileText, Calendar, DollarSign, Building2, User } from 'lucide-react';
+import { Loader2, FileText, Calendar, DollarSign, User } from 'lucide-react';
 import { useAuth } from '@/lib/auth';
 import type { ContractWithDetails } from '@shared/schema';
 import { format } from 'date-fns';
@@ -61,7 +61,7 @@ export default function TenantContract() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Building2 className="h-5 w-5" />
+              <img src="/favicon.png" alt="Local" className="h-5 w-5" />
               Información del Local
             </CardTitle>
           </CardHeader>

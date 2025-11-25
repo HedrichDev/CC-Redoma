@@ -1,7 +1,7 @@
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Building2, Store, FileText, MessageSquare, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Store, FileText, MessageSquare, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { useAuth } from '@/lib/auth';
 
@@ -13,7 +13,7 @@ export default function Landing() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between px-6">
           <div className="flex items-center gap-2">
-            <Building2 className="h-6 w-6 text-primary" />
+            <img src="/favicon.png" alt="CCredoma" className="h-6 w-6" />
             <span className="text-xl font-semibold">CCredoma</span>
           </div>
           <div className="flex items-center gap-4">
@@ -202,7 +202,7 @@ export default function Landing() {
         <div className="container px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
-              <Building2 className="h-6 w-6 text-primary" />
+              <img src="/favicon.png" alt="CCredoma" className="h-6 w-6" />
               <span className="font-semibold">CCredoma</span>
             </div>
             <p className="text-sm text-muted-foreground font-body">

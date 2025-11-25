@@ -5,7 +5,6 @@ import {
   DollarSign, 
   MessageSquare,
   LogOut,
-  Building2,
   Code2
 } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
@@ -117,7 +116,7 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarHeader className="p-6">
         <div className="flex items-center gap-3">
-          <Building2 className="h-8 w-8 text-primary" />
+          <img src="/favicon.png" alt="CCredoma" className="h-8 w-8" />
           <div>
             <h2 className="text-lg font-semibold">CCredoma</h2>
             <p className="text-xs text-muted-foreground">

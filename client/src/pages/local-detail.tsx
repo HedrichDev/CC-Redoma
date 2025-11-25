@@ -10,7 +10,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Building2, MapPin, Square, DollarSign, ArrowLeft, Loader2 } from 'lucide-react';
+import { MapPin, Square, DollarSign, ArrowLeft, Loader2 } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { useAuth } from '@/lib/auth';
 import { useToast } from '@/hooks/use-toast';
@@ -107,7 +107,7 @@ export default function LocalDetail() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <Building2 className="h-6 w-6 text-primary" />
+            <img src="/favicon.png" alt="CCredoma" className="h-6 w-6" />
             <span className="text-xl font-semibold">CCredoma</span>
           </Link>
           <div className="flex items-center gap-4">
@@ -193,7 +193,7 @@ export default function LocalDetail() {
 
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 rounded-md bg-primary/10 flex items-center justify-center">
-                      <Building2 className="h-5 w-5 text-primary" />
+                      <img src="/favicon.png" alt="Piso" className="h-5 w-5" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground font-body">Piso</p>
