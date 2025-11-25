@@ -1,6 +1,12 @@
-# CCredoma - Plataforma Integral de Gestión de Centros Comerciales
 
-![CCredoma Logo](https://github.com/HedrichDev/CC-Redoma/blob/main/client/public/favicon.png)
+<div align="center" style="transition: transform 0.2s; display: inline-block;">
+  <img height="150" src="https://github.com/HedrichDev/CC-Redoma/blob/main/client/public/favicon.png" 
+       style="border-radius: 15px; transition: transform 0.2s;" 
+       onmouseover="this.style.transform='scale(1.1)'" 
+       onmouseout="this.style.transform='scale(1)'"/>
+</div>
+
+# CCredoma - Plataforma Integral de Gestión de Centros Comerciales
 
 > **Solución completa y profesional para administración, control y gestión de espacios comerciales en centros comerciales modernos.**
 
