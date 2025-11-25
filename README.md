@@ -686,3 +686,4 @@ Para más información o consultas, no dudes en contactar con nuestro equipo de 
 
 **Última actualización:** Noviembre 2025  
 **Versión:** 1.0.0
+"# CC-Redoma" 
