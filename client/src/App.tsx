@@ -9,6 +9,9 @@ import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { AppSidebar } from './components/app-sidebar';
 import { ProtectedRoute } from './components/protected-route';
 import { ThemeToggle } from './components/theme-toggle';
+import { Button } from '@/components/ui/button';
+import { LogOut } from 'lucide-react';
+import { useLocation } from 'wouter';
 
 import Landing from './pages/landing';
 import Login from './pages/login';
@@ -28,6 +31,14 @@ import TenantContract from './pages/tenant/contract';
 import TenantPayments from './pages/tenant/payments';
 
 function AdminLayout({ children }: { children: React.ReactNode }) {
+  const { user, logout } = useAuth();
+  const [, setLocation] = useLocation();
+
+  const handleLogout = async () => {
+    await logout();
+    setLocation('/login');
+  };
+
   return (
     <SidebarProvider>
       <div className="flex h-screen w-full">
@@ -35,7 +46,22 @@ function AdminLayout({ children }: { children: React.ReactNode }) {
         <div className="flex flex-col flex-1">
           <header className="flex items-center justify-between p-4 border-b">
             <SidebarTrigger data-testid="button-sidebar-toggle" />
-            <ThemeToggle />
+            <div className="flex items-center gap-4">
+              <div className="text-sm text-muted-foreground font-body">
+                {user?.fullName}
+              </div>
+              <Button
+                onClick={handleLogout}
+                variant="ghost"
+                size="sm"
+                data-testid="button-logout"
+                className="flex items-center gap-2"
+              >
+                <LogOut className="h-4 w-4" />
+                <span className="hidden sm:inline">Cerrar Sesión</span>
+              </Button>
+              <ThemeToggle />
+            </div>
           </header>
           <main className="flex-1 overflow-auto">
             {children}
@@ -47,6 +73,14 @@ function AdminLayout({ children }: { children: React.ReactNode }) {
 }
 
 function TenantLayout({ children }: { children: React.ReactNode }) {
+  const { user, logout } = useAuth();
+  const [, setLocation] = useLocation();
+
+  const handleLogout = async () => {
+    await logout();
+    setLocation('/login');
+  };
+
   return (
     <SidebarProvider>
       <div className="flex h-screen w-full">
@@ -54,7 +88,22 @@ function TenantLayout({ children }: { children: React.ReactNode }) {
         <div className="flex flex-col flex-1">
           <header className="flex items-center justify-between p-4 border-b">
             <SidebarTrigger data-testid="button-sidebar-toggle" />
-            <ThemeToggle />
+            <div className="flex items-center gap-4">
+              <div className="text-sm text-muted-foreground font-body">
+                {user?.fullName}
+              </div>
+              <Button
+                onClick={handleLogout}
+                variant="ghost"
+                size="sm"
+                data-testid="button-logout"
+                className="flex items-center gap-2"
+              >
+                <LogOut className="h-4 w-4" />
+                <span className="hidden sm:inline">Cerrar Sesión</span>
+              </Button>
+              <ThemeToggle />
+            </div>
           </header>
           <main className="flex-1 overflow-auto">
             {children}
