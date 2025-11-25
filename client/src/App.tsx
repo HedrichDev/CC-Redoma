@@ -30,6 +30,8 @@ import TenantDashboard from './pages/tenant/dashboard';
 import TenantContract from './pages/tenant/contract';
 import TenantPayments from './pages/tenant/payments';
 
+import DeveloperDashboard from './pages/developer/dashboard';
+
 function AdminLayout({ children }: { children: React.ReactNode }) {
   const { user, logout } = useAuth();
   const [, setLocation] = useLocation();
@@ -73,6 +75,48 @@ function AdminLayout({ children }: { children: React.ReactNode }) {
 }
 
 function TenantLayout({ children }: { children: React.ReactNode }) {
+  const { user, logout } = useAuth();
+  const [, setLocation] = useLocation();
+
+  const handleLogout = async () => {
+    await logout();
+    setLocation('/login');
+  };
+
+  return (
+    <SidebarProvider>
+      <div className="flex h-screen w-full">
+        <AppSidebar />
+        <div className="flex flex-col flex-1">
+          <header className="flex items-center justify-between p-4 border-b">
+            <SidebarTrigger data-testid="button-sidebar-toggle" />
+            <div className="flex items-center gap-4">
+              <div className="text-sm text-muted-foreground font-body">
+                {user?.fullName}
+              </div>
+              <Button
+                onClick={handleLogout}
+                variant="ghost"
+                size="sm"
+                data-testid="button-logout"
+                className="flex items-center gap-2"
+              >
+                <LogOut className="h-4 w-4" />
+                <span className="hidden sm:inline">Cerrar Sesión</span>
+              </Button>
+              <ThemeToggle />
+            </div>
+          </header>
+          <main className="flex-1 overflow-auto">
+            {children}
+          </main>
+        </div>
+      </div>
+    </SidebarProvider>
+  );
+}
+
+function DeveloperLayout({ children }: { children: React.ReactNode }) {
   const { user, logout } = useAuth();
   const [, setLocation] = useLocation();
 
@@ -184,6 +228,14 @@ function Router() {
           <TenantLayout>
             <TenantPayments />
           </TenantLayout>
+        </ProtectedRoute>
+      </Route>
+
+      <Route path="/developer/dashboard">
+        <ProtectedRoute allowedRoles={['Developer']}>
+          <DeveloperLayout>
+            <DeveloperDashboard />
+          </DeveloperLayout>
         </ProtectedRoute>
       </Route>
 

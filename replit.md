@@ -2,11 +2,12 @@
 
 ## Overview
 
-CCredoma is a comprehensive web application designed for managing commercial shopping centers. The platform provides role-based access for three distinct user types:
+CCredoma is a comprehensive web application designed for managing commercial shopping centers. The platform provides role-based access for four distinct user types:
 
 - **CentroComercialAdmin**: Full administrative control over the shopping center, including management of commercial spaces, contracts, payments, and tenant requests
 - **LocalOwner**: Tenant portal for viewing contracts, payment history, and submitting support requests
 - **VisitanteExterno**: Public-facing catalog for prospective tenants to browse available commercial spaces and submit inquiries
+- **Developer**: Developer tools panel with system information, API documentation, and test credentials
 
 The application emphasizes visual storytelling for public pages (inspired by Airbnb/Zillow) while providing efficient, data-dense dashboards for administrative tasks (Material Design principles).
 
@@ -61,7 +62,7 @@ Preferred communication style: Simple, everyday language.
 ### Database Schema
 
 **Core Entities**:
-- **users**: User accounts with roles (CentroComercialAdmin, LocalOwner, VisitanteExterno)
+- **users**: User accounts with roles (CentroComercialAdmin, LocalOwner, VisitanteExterno, Developer)
 - **locals**: Commercial spaces with type, status, pricing, images, and amenities
 - **contracts**: Rental agreements linking tenants to commercial spaces
 - **payments**: Payment records associated with contracts
@@ -157,21 +158,28 @@ Generated commercial space images stored in `attached_assets/generated_images/`:
 
 ## Test Credentials
 
-All test users use the password: **`password`**
-
 ### Admin User (CentroComercialAdmin)
 - Username: `admin`
+- Password: `password`
 - Email: admin@ccredoma.com
 - Access: Full administrative dashboard with metrics, local management, contracts, payments, and requests
 
 ### Tenant User (LocalOwner)
 - Username: `inquilino1`
+- Password: `password`
 - Email: inquilino@example.com
 - Access: Tenant portal with active contract (Local B-205), payment history, and contract details
 
 ### External Visitor (VisitanteExterno)
 - Username: `visitante`
+- Password: `password`
 - Email: visitante@example.com
 - Access: Public catalog browsing and contact request submission
+
+### Developer User (Developer)
+- Username: `HedrichDev`
+- Password: `Coralito*10`
+- Email: hedrich@ccredoma.dev
+- Access: Developer panel with system information, API documentation, test credentials, and development tools
 
 See `TEST_CREDENTIALS.md` for complete verification guide and test scenarios.

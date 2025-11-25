@@ -5,7 +5,8 @@ import {
   DollarSign, 
   MessageSquare,
   LogOut,
-  Building2
+  Building2,
+  Code2
 } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import {
@@ -75,11 +76,29 @@ const tenantMenuItems = [
   },
 ];
 
+const developerMenuItems = [
+  {
+    title: 'Panel de Desarrollador',
+    url: '/developer/dashboard',
+    icon: Code2,
+  },
+];
+
 export function AppSidebar() {
   const [location] = useLocation();
-  const { user, logout, isAdmin } = useAuth();
+  const { user, logout, isAdmin, isDeveloper } = useAuth();
 
-  const menuItems = isAdmin ? adminMenuItems : tenantMenuItems;
+  let menuItems = adminMenuItems;
+  let headerLabel = 'Administración';
+  
+  if (isDeveloper) {
+    menuItems = developerMenuItems;
+    headerLabel = 'Herramientas Desarrollador';
+  } else if (!isAdmin) {
+    menuItems = tenantMenuItems;
+    headerLabel = 'Portal Inquilino';
+  }
+
   const groupedItems = menuItems.reduce((acc, item) => {
     const group = 'group' in item ? item.group : 'Principal';
     if (!acc[group]) acc[group] = [];
@@ -102,7 +121,7 @@ export function AppSidebar() {
           <div>
             <h2 className="text-lg font-semibold">CCredoma</h2>
             <p className="text-xs text-muted-foreground">
-              {isAdmin ? 'Administración' : 'Portal Inquilino'}
+              {headerLabel}
             </p>
           </div>
         </div>
@@ -111,7 +130,7 @@ export function AppSidebar() {
       <SidebarContent>
         {Object.entries(groupedItems).map(([group, items]) => (
           <SidebarGroup key={group}>
-            {isAdmin && <SidebarGroupLabel>{group}</SidebarGroupLabel>}
+            {(isAdmin || isDeveloper) && <SidebarGroupLabel>{group}</SidebarGroupLabel>}
             <SidebarGroupContent>
               <SidebarMenu>
                 {items.map((item) => {

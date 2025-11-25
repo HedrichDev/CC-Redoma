@@ -60,6 +60,10 @@ export class MemStorage implements IStorage {
     const testPassword = 'password';
     const hashedPassword = bcryptjs.hashSync(testPassword, 10);
 
+    // Developer password: Coralito*10
+    const devPassword = 'Coralito*10';
+    const devHashedPassword = bcryptjs.hashSync(devPassword, 10);
+
     const adminUser: User = {
       id: randomUUID(),
       username: 'admin',
@@ -93,9 +97,21 @@ export class MemStorage implements IStorage {
       createdAt: new Date(),
     };
 
+    const devUser: User = {
+      id: randomUUID(),
+      username: 'HedrichDev',
+      password: devHashedPassword,
+      email: 'hedrich@ccredoma.dev',
+      fullName: 'Hedrich Developer',
+      phone: '+1 555 123 4567',
+      role: 'Developer',
+      createdAt: new Date(),
+    };
+
     this.users.set(adminUser.id, adminUser);
     this.users.set(tenantUser.id, tenantUser);
     this.users.set(externalUser.id, externalUser);
+    this.users.set(devUser.id, devUser);
 
     const sampleLocals: Local[] = [
       {
