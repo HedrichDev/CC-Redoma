@@ -16,16 +16,6 @@
 
 ## Integrantes del Proyecto 
 > 👥 Christopher Hedrich C.I 31.821.175
-> 
-> 👥 Anayle Figueroa
-> 
-> 👥 Angel Rodriguez Bowen
-> 
-> 👥 Daniel Rodriguez
-> 
-> 👥 David Nieto
-> 
-> 👥Sophia Alfonzo
 
 
 ## 📋 Tabla de Contenidos
