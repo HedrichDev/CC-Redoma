@@ -14,10 +14,6 @@
 
 ---
 
-## Integrantes del Proyecto 
-> 👥 Christopher Hedrich C.I 31.821.175
-
-
 ## 📋 Tabla de Contenidos
 
 - [Descripción General](#descripción-general)
